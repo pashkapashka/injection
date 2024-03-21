@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form action="/" method="post">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" id="word" name="word" placeholder="" required>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-primary btn-block">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-6">English</th>
+              <th class="col-6">Ukrainian</th>
+              <th class="col-1">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for word in words %}
+            <tr>
+              <td>{{ word.word }}</td>
+              <td>{{ word.translation }}</td>
+              <td>
+                <div class="btn-group" role="group" aria-label="Actions">
+                  <button class="btn btn-success btn-sm btn-pronounce-us" data-word="{{ word.word }}">US</button>
+                  <button class="btn btn-info btn-sm btn-pronounce-uk" data-word="{{ word.word }}">UK</button>
+                  <a href="{{ url_for('index', delete_word_id=word.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

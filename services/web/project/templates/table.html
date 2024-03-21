@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %} Talkative {% endblock %}
+{% block content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Form</th>
+        <th>Example</th>
+        <th>Positive</th>
+        <th>Negative</th>
+        <th>Question</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Regular verbs (-ed)</td>
+        <td>walked, talked, played</td>
+        <td>I walked to the store.</td>
+        <td>I didn't walk to the store.</td>
+        <td>Did you walk to the store?</td>
+      </tr>
+      <tr>
+        <td>Irregular verbs</td>
+        <td>went, ate, saw</td>
+        <td>I went to the park.</td>
+        <td>I didn't go to the park.</td>
+        <td>Did you go to the park?</td>
+      </tr>
+      <tr>
+        <td>Verbs ending in -y</td>
+        <td>studied, carried, tried</td>
+        <td>I studied for my exam.</td>
+        <td>I didn't study for my exam.</td>
+        <td>Did you study for your exam?</td>
+      </tr>
+      <tr>
+        <td>Verbs ending in -e</td>
+        <td>lived, loved, liked</td>
+        <td>I lived in Paris for a year.</td>
+        <td>I didn't live in Paris for a year.</td>
+        <td>Did you live in Paris for a year?</td>
+      </tr>
+      <tr>
+        <td>Verbs ending in a consonant + a vowel + a consonant</td>
+        <td>stopped, planned, begged</td>
+        <td>I stopped at the red light.</td>
+        <td>I didn't stop at the red light.</td>
+        <td>Did you stop at the red light?</td>
+      </tr>
+      <tr>
+        <td>Verbs with irregular past tense and past participle forms</td>
+        <td>was/were, had, did</td>
+        <td>I was at home yesterday.</td>
+        <td>I wasn't at home yesterday.</td>
+        <td>Were you at home yesterday?</td>
+      </tr>
+      <tr>
+        <td>Phrasal verbs</td>
+        <td>turned on, took off, looked for</td>
+        <td>I turned on the light.</td>
+        <td>I didn't turn on the light.</td>
+        <td>Did you turn on the light?</td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}
