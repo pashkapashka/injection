@@ -49,7 +49,6 @@ def seed_db():
 
     db.session.add(User(email="sytnikp1@gmail.com", username="pashka", role="admin", active=1))
     db.session.add(User(email="sytnik.p@gmail.com", username="sytnik", role="user", active=0))
-    db.session.add(User(email="sytnikp1@gmail.com", username="pavlo", role="test", active=2))
 
 
     db.session.commit()
