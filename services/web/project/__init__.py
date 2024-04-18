@@ -8,6 +8,57 @@ app.config.from_object("project.config.Config")
 db = SQLAlchemy(app)
 
 
+class AddressBook(db.Model):
+    __tablename__ = 'address_book'
+
+    id = db.Column(db.Integer, primary_key=True)
+    last_name = db.Column(db.String(128), nullable=False)
+    first_name = db.Column(db.String(128), nullable=False)
+    patronymic = db.Column(db.String(128))
+    birthday = db.Column(db.Date)
+    address = db.Column(db.String(128))
+    phone = db.Column(db.String(20))
+    notes = db.Column(db.Text)
+
+    def __init__(self, last_name, first_name, patronymic, birthday, address, phone, notes):
+        self.last_name = last_name
+        self.first_name = first_name
+        self.patronymic = patronymic
+        self.birthday = birthday
+        self.address = address
+        self.phone = phone
+        self.notes = notes
+
+
+class Professions(db.Model):
+    __tablename__ = 'professions'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), nullable=False)
+
+    def __init__(self, name):
+        self.name = name
+
+
+class Characteristics(db.Model):
+    __tablename__ = 'characteristics'
+
+    id = db.Column(db.Integer, primary_key=True)
+    last_name = db.Column(db.String(128), nullable=False)
+    education = db.Column(db.String(128))
+    profession = db.Column(db.String(128))
+    qualification = db.Column(db.String(128))
+    work_experience = db.Column(db.String(128))
+
+    def __init__(self, last_name, education, profession, qualification, work_experience):
+        self.last_name = last_name
+        self.education = education
+        self.profession = profession
+        self.qualification = qualification
+        self.work_experience = work_experience
+
+
+
 class User(db.Model):
     __tablename__ = "users"
 
